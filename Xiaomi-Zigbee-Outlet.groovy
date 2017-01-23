@@ -18,7 +18,7 @@ metadata {
         capability "Configuration"
         capability "Refresh"
         capability "Switch"
-        capability "Temperature Measurement"
+      //  capability "Temperature Measurement"
     }
 
     // simulator metadata
@@ -41,7 +41,7 @@ metadata {
                 attributeState "turningOff", label:'${name}', action:"switch.on", icon:"st.switches.light.off", backgroundColor:"#ffffff", nextState:"turningOn"
             }
         }
-        valueTile("temperature", "device.temperature", width: 2, height: 2) {
+      /*  valueTile("temperature", "device.temperature", width: 2, height: 2) {
 			state("temperature", label:'${currentValue}°',
 				backgroundColors:[
 					[value: 31, color: "#153591"],
@@ -53,12 +53,12 @@ metadata {
 					[value: 96, color: "#bc2323"]
 				]
 			)
-		}
+		} */
         standardTile("refresh", "device.refresh", inactiveLabel: false, decoration: "flat", width: 2, height: 2) {
             state "default", label:"", action:"refresh.refresh", icon:"st.secondary.refresh"
         }
-        main (["switch", "temperature"])
-        details(["switch", "temperature", "refresh"])
+        main (["switch"/*, "temperature"*/])
+        details(["switch", /*"temperature",*/ "refresh"])
     }
 }
 
